@@ -1,6 +1,9 @@
 package com.example.githubusersearch.viewmodel
 
 import android.util.Log
+import androidx.compose.foundation.layout.Box
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.runtime.Composable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,6 +12,7 @@ import com.example.githubusersearch.data.model.UserData
 import com.example.githubusersearch.data.repo.UserRepository
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import java.lang.reflect.Modifier
 
 class UserViewModel : ViewModel() {
 
@@ -21,6 +25,8 @@ class UserViewModel : ViewModel() {
     // LiveData for error messages
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> get() = _error
+
+
 
     // LiveData for loading state
     private val _isLoading = MutableLiveData<Boolean>()
@@ -46,3 +52,4 @@ class UserViewModel : ViewModel() {
         }
     }
 }
+
